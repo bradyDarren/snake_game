@@ -17,27 +17,20 @@ score_display.color("white","white")
 score_display.write(f"Score: {score}", move=True,align="center",font=("Ariel",40,"normal"))
 
 """#3 create a snake with a square body"""
-snake_head = Turtle(shape="square")
-snake_head.penup()
-snake_head.color("white")
-print(snake_head.position())
+initial_ycord = 0
+intitial_xcord = 0
 
-snake_body = Turtle(shape="square")
-snake_body.penup()
-snake_body.color("white")
-snake_body.goto(x=-20,y=0)
-print(snake_body.position())
+for _ in range(3):
+    snake = Turtle(shape="square")
+    snake.penup()
+    snake.color("white")
+    snake.goto(x=intitial_xcord,y=initial_ycord)
+    intitial_xcord -= 20
 
-snake_tail = Turtle(shape="square")
-snake_tail.penup()
-snake_tail.color("white")
-snake_tail.goto(x=-40,y=0)
-print(snake_tail.position())
+"""#4 implement the movement of the snake within the window. """
 
 """#4 randomize a circle that shows up to resemble food."""
+
 """#5 If the snake comes into contact with the food make the snake grow."""
-
-
-
 
 screen.exitonclick()
