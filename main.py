@@ -33,16 +33,13 @@ for snake in range(3):
 
 
 """#4 implement the movement of the snake within the window. """
-def up():
-    position = 0
+def move():
     for i, part in enumerate(entire_snake):
-        if i == 0:
-            part.setheading(90)
-            part.forward(20)
-        elif i == 1:
-            part.forward(20)
-            part.setheading(90)
-        # elif i == 2:
+        new_xcord = entire_snake[i-1].xcor()
+        new_ycord = entire_snake[i-1].ycor()
+        entire_snake[i].goto(new_xcord,new_ycord)
+
+# def up(): 
 
 def down():
     snake.setheading(270)
