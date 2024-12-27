@@ -28,6 +28,21 @@ for _ in range(3):
     intitial_xcord -= 20
 
 """#4 implement the movement of the snake within the window. """
+def up() 
+    snake.setheading(90)
+    snake.forward(10)
+
+def down()
+    snake.setheading(270)
+    snake.forward(10)
+
+def left()
+    snake.setheading(180)
+    snake.forward(10)
+
+def right():
+    snake.setheading(0)
+    snake.forward(10)
 
 """#4 randomize a circle that shows up to resemble food."""
 
