@@ -3,6 +3,7 @@ import random
 
 
 screen = Screen()
+screen.listen()
 """#1 create a black background for the screen as well as the score count indicator."""
 screen.bgcolor("black")
 screen.setup(height=1250, width=1250)
@@ -19,30 +20,46 @@ score_display.write(f"Score: {score}", move=True,align="center",font=("Ariel",40
 """#3 create a snake with a square body"""
 initial_ycord = 0
 intitial_xcord = 0
+entire_snake = []
 
-for _ in range(3):
+for snake in range(3):
     snake = Turtle(shape="square")
     snake.penup()
     snake.color("white")
     snake.goto(x=intitial_xcord,y=initial_ycord)
+    entire_snake.append(snake)
     intitial_xcord -= 20
+    print(snake.position())
+
 
 """#4 implement the movement of the snake within the window. """
-def up() 
-    snake.setheading(90)
-    snake.forward(10)
+def up():
+    position = 0
+    for i, part in enumerate(entire_snake):
+        if i == 0:
+            part.setheading(90)
+            part.forward(20)
+        elif i == 1:
+            part.forward(20)
+            part.setheading(90)
+        # elif i == 2:
 
-def down()
+def down():
     snake.setheading(270)
     snake.forward(10)
 
-def left()
+def left():
     snake.setheading(180)
     snake.forward(10)
 
 def right():
     snake.setheading(0)
     snake.forward(10)
+
+screen.onkey(key="Up", fun=up)
+screen.onkey(key="Down", fun=down)
+screen.onkey(key="Left", fun=left)
+screen.onkey(key="Right", fun=right)
 
 """#4 randomize a circle that shows up to resemble food."""
 
