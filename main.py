@@ -3,8 +3,15 @@ import random
 
 
 screen = Screen()
-"""#1 create a black background for the screen"""
+"""#1 create a black background for the screen as well as the score count indicator."""
 screen.bgcolor("black")
+
+score = 0
+score_display = Turtle()
+score_display.penup()
+score_display.color("white","white")
+score_display.write(f"Score: {score}", move=True,align="center",font=("Ariel",20,"normal"))
+
 """#2 create a Score counter at the top of the screen"""
 """#3 create a snake with a square body"""
 
