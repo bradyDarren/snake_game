@@ -19,16 +19,17 @@ score_display.write(f"Score: {score}", move=True,align="center",font=("Ariel",40
 
 """#2 create a snake with a square body"""
 initial_ycord = 0
-intitial_xcord = 0
+initial_xcord = 0
 entire_snake = []
 
 for snake in range(3):
     snake = Turtle(shape="square")
     snake.penup()
     snake.color("white")
-    snake.goto(x=intitial_xcord,y=initial_ycord)
+    snake.goto(x=initial_xcord,y=initial_ycord)
     entire_snake.append(snake)
-    intitial_xcord -= 20
+    if len(entire_snake) != 3:
+        initial_xcord -= 20
     # print(snake.position())
 
 
@@ -38,8 +39,10 @@ def move():
         new_xcord = entire_snake[i-1].xcor()
         new_ycord = entire_snake[i-1].ycor()
         entire_snake[i].goto(new_xcord,new_ycord)
+    entire_snake[0].forward(20)
 
-move()
+for _ in range(10):
+    move()
 
 def up():
     if entire_snake[0].heading() != 270:
