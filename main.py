@@ -41,29 +41,35 @@ def move():
         entire_snake[i].goto(new_xcord,new_ycord)
     entire_snake[0].forward(20)
 
-for _ in range(10):
-    move()
-
 def up():
     if entire_snake[0].heading() != 270:
-        entire_snake
+        entire_snake[0].setheading(90)
+        entire_snake[0].forward(10)
 
 def down():
-    snake.setheading(270)
-    snake.forward(10)
+    if entire_snake[0].heading() != 90:
+        entire_snake[0].setheading(270)
+        entire_snake[0].forward(10)
 
 def left():
-    snake.setheading(180)
-    snake.forward(10)
+    if entire_snake[0].heading() != 0:
+        entire_snake[0].setheading(180)
+        entire_snake[0].forward(10)
 
 def right():
-    snake.setheading(0)
-    snake.forward(10)
+    if entire_snake[0].heading() != 180:
+        entire_snake[0].setheading(0)
+        entire_snake[0].forward(10)
 
 screen.onkey(key="Up", fun=up)
 screen.onkey(key="Down", fun=down)
 screen.onkey(key="Left", fun=left)
 screen.onkey(key="Right", fun=right)
+
+game_on = True
+
+while game_on: 
+    move()
 
 """#4 randomize a circle that shows up to resemble food."""
 
