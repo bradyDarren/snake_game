@@ -13,9 +13,9 @@ score = 0
 score_display = Turtle()
 score_display.hideturtle()
 score_display.penup()
-score_display.goto(x=-10,y=550)
+score_display.goto(x=-10,y=450)
 score_display.color("white","white")
-score_display.write(f"Score: {score}", move=True,align="center",font=("Ariel",40,"normal"))
+score_display.write(f"Score: {score}",move=False,align="center",font=("Ariel",40,"normal"))
 
 """#2 create a snake with a square body"""
 initial_ycord = 0
@@ -66,10 +66,10 @@ screen.onkey(key="Down", fun=down)
 screen.onkey(key="Left", fun=left)
 screen.onkey(key="Right", fun=right)
 
-game_on = True
+# game_on = True
 
-while game_on: 
-    move()
+# while game_on: 
+#     move()
 
 """#4 randomize a circle that shows up to resemble food."""
 
