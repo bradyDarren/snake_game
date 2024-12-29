@@ -17,7 +17,7 @@ score_display.goto(x=-10,y=550)
 score_display.color("white","white")
 score_display.write(f"Score: {score}", move=True,align="center",font=("Ariel",40,"normal"))
 
-"""#3 create a snake with a square body"""
+"""#2 create a snake with a square body"""
 initial_ycord = 0
 intitial_xcord = 0
 entire_snake = []
@@ -29,17 +29,21 @@ for snake in range(3):
     snake.goto(x=intitial_xcord,y=initial_ycord)
     entire_snake.append(snake)
     intitial_xcord -= 20
-    print(snake.position())
+    # print(snake.position())
 
 
-"""#4 implement the movement of the snake within the window. """
+"""#3 implement the movement of the snake within the window. """
 def move():
-    for i, part in enumerate(entire_snake):
+    for i in range(len(entire_snake)-1,0,-1):
         new_xcord = entire_snake[i-1].xcor()
         new_ycord = entire_snake[i-1].ycor()
         entire_snake[i].goto(new_xcord,new_ycord)
 
-# def up(): 
+move()
+
+def up():
+    if entire_snake[0].heading() != 270:
+        entire_snake
 
 def down():
     snake.setheading(270)
