@@ -8,6 +8,7 @@ screen.listen()
 screen.bgcolor("black")
 screen.setup(height=1000, width=1250)
 screen.title("Classic Snake")
+screen.tracer(0)
 
 score = 0
 score_display = Turtle()
@@ -32,6 +33,8 @@ for snake in range(3):
         initial_xcord -= 20
     # print(snake.position())
 
+screen.update()
+
 """#3 implement the movement of the snake within the window. """
 def move():
     for i in range(len(entire_snake)-1,0,-1):
@@ -43,32 +46,27 @@ def move():
 def up():
     if entire_snake[0].heading() != 270:
         entire_snake[0].setheading(90)
-        entire_snake[0].forward(10)
+        entire_snake[0].forward(20)
 
 def down():
     if entire_snake[0].heading() != 90:
         entire_snake[0].setheading(270)
-        entire_snake[0].forward(10)
+        entire_snake[0].forward(20)
 
 def left():
     if entire_snake[0].heading() != 0:
         entire_snake[0].setheading(180)
-        entire_snake[0].forward(10)
+        entire_snake[0].forward(20)
 
 def right():
     if entire_snake[0].heading() != 180:
         entire_snake[0].setheading(0)
-        entire_snake[0].forward(10)
+        entire_snake[0].forward(20)
 
 screen.onkey(key="Up", fun=up)
 screen.onkey(key="Down", fun=down)
 screen.onkey(key="Left", fun=left)
 screen.onkey(key="Right", fun=right)
-
-# game_on = True
-
-# while game_on: 
-#     move()
 
 """#4 randomize a circle that shows up to resemble food."""
 
@@ -80,9 +78,6 @@ def generate_food():
     food.color("blue")
     food.teleport(food_xcord,food_ycord)
 
-
-for _ in range(10):
-    generate_food()
 
 """#5 If the snake comes into contact with the food make the snake grow."""
 
