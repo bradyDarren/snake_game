@@ -72,7 +72,17 @@ screen.onkey(key="Right", fun=right)
 
 """#4 randomize a circle that shows up to resemble food."""
 
+def generate_food():
+    food_xcord = random.randint(-600,600)
+    food_ycord = random.randint(-475,475)
+    food = Turtle(shape="circle")
+    food.penup()
+    food.color("blue")
+    food.teleport(food_xcord,food_ycord)
 
+
+for _ in range(10):
+    generate_food()
 
 """#5 If the snake comes into contact with the food make the snake grow."""
 
