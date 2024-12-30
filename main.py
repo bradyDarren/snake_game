@@ -6,7 +6,7 @@ screen = Screen()
 screen.listen()
 """#1 create a black background for the screen as well as the score count indicator."""
 screen.bgcolor("black")
-screen.setup(height=1250, width=1250)
+screen.setup(height=1000, width=1250)
 screen.title("Classic Snake")
 
 score = 0
@@ -31,7 +31,6 @@ for snake in range(3):
     if len(entire_snake) != 3:
         initial_xcord -= 20
     # print(snake.position())
-
 
 """#3 implement the movement of the snake within the window. """
 def move():
@@ -72,6 +71,8 @@ screen.onkey(key="Right", fun=right)
 #     move()
 
 """#4 randomize a circle that shows up to resemble food."""
+
+
 
 """#5 If the snake comes into contact with the food make the snake grow."""
 
