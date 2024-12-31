@@ -33,11 +33,11 @@ for snake in range(3):
         initial_xcord -= 20
     # print(snake.position())
 
-screen.update()
+screen.update() # used to update the all of the code above. 
 
 """#3 implement the movement of the snake within the window. """
 def move():
-    for i in range(len(entire_snake)-1,0,-1):
+    for i in range(len(entire_snake)-1, 0, -1):
         new_xcord = entire_snake[i-1].xcor()
         new_ycord = entire_snake[i-1].ycor()
         entire_snake[i].goto(new_xcord,new_ycord)
@@ -70,13 +70,13 @@ screen.onkey(key="Right", fun=right)
 
 """#4 randomize a circle that shows up to resemble food."""
 
-# def generate_food():
-#     food_xcord = random.randint(-600,600)
-#     food_ycord = random.randint(-475,475)
-#     food = Turtle(shape="circle")
-#     food.penup()
-#     food.color("blue")
-#     food.teleport(food_xcord,food_ycord)
+def generate_food():
+    food_xcord = random.randint(-600,600)
+    food_ycord = random.randint(-475,475)
+    food = Turtle(shape="circle")
+    food.penup()
+    food.color("blue")
+    food.teleport(food_xcord,food_ycord) 
 
 
 """#5 If the snake comes into contact with the food make the snake grow."""
