@@ -1,12 +1,12 @@
 from turtle import Turtle
 
 class Scoreboard(Turtle): 
-    def __init__(self, xcord, ycord):
+    def __init__(self, ycord):
         super().__init__()
         self.score = 0
         self.hideturtle()
         self.penup()
-        self.goto(x=xcord,y=ycord)
+        self.goto(x=0,y=ycord)
         self.color("white","white")
 
     def update_score(self):
