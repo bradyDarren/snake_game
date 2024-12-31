@@ -1,3 +1,2 @@
 
-class Snake: 
-    
+# class Snake: 
