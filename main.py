@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
 from scoreboard import Scoreboard
+from snake import Snake
 import random 
 
 
@@ -12,24 +13,25 @@ screen.title("Classic Snake")
 screen.tracer(0)
 
 score_ycord = int(((screen.window_height()) / 2) - 50)
-
-score = Scoreboard(xcord=0, ycord=score_ycord)
+score = Scoreboard(ycord=score_ycord)
 score.update_score()
 
 """#2 create a snake with a square body"""
-initial_ycord = 0
-initial_xcord = 0
-entire_snake = []
+snake = Snake()
+snake.create_snake()
+# initial_ycord = 0
+# initial_xcord = 0
+# entire_snake = []
 
-for snake in range(3):
-    snake = Turtle(shape="square")
-    snake.penup()
-    snake.color("white")
-    snake.goto(x=initial_xcord,y=initial_ycord)
-    entire_snake.append(snake)
-    if len(entire_snake) != 3:
-        initial_xcord -= 20
-    # print(snake.position())
+# for snake in range(3):
+#     snake = Turtle(shape="square")
+#     snake.penup()
+#     snake.color("white")
+#     snake.goto(x=initial_xcord,y=initial_ycord)
+#     entire_snake.append(snake)
+#     if len(entire_snake) != 3:
+#         initial_xcord -= 20
+#     # print(snake.position())
 
 screen.update() # used to update the all of the code above. 
 
