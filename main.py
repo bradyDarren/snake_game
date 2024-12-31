@@ -1,4 +1,5 @@
 from turtle import Turtle, Screen
+from scoreboard import Scoreboard
 import random 
 
 
@@ -10,13 +11,14 @@ screen.setup(height=1000, width=1250)
 screen.title("Classic Snake")
 screen.tracer(0)
 
-score = 0
-score_display = Turtle()
-score_display.hideturtle()
-score_display.penup()
-score_display.goto(x=-10,y=450)
-score_display.color("white","white")
-score_display.write(f"Score: {score}",move=False,align="center",font=("Ariel",40,"normal"))
+# score = 0
+# score_display = Turtle()
+# score_display.hideturtle()
+# score_display.penup()
+# score_display.goto(x=-10,y=450)
+# score_display.color("white","white")
+# score_display.write(f"Score: {score}",move=False,align="center",font=("Ariel",40,"normal"))
+
 
 """#2 create a snake with a square body"""
 initial_ycord = 0
@@ -77,7 +79,6 @@ def generate_food():
     food.penup()
     food.color("blue")
     food.teleport(food_xcord,food_ycord) 
-
 
 """#5 If the snake comes into contact with the food make the snake grow."""
 
