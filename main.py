@@ -19,7 +19,6 @@ screen.tracer(0)
 # score_display.color("white","white")
 # score_display.write(f"Score: {score}",move=False,align="center",font=("Ariel",40,"normal"))
 
-
 """#2 create a snake with a square body"""
 initial_ycord = 0
 initial_xcord = 0
