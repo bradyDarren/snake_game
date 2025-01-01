@@ -19,30 +19,10 @@ score.update_score()
 """#2 create a snake with a square body"""
 snake = Snake()
 snake.create_snake()
-# initial_ycord = 0
-# initial_xcord = 0
-# entire_snake = []
-
-# for snake in range(3):
-#     snake = Turtle(shape="square")
-#     snake.penup()
-#     snake.color("white")
-#     snake.goto(x=initial_xcord,y=initial_ycord)
-#     entire_snake.append(snake)
-#     if len(entire_snake) != 3:
-#         initial_xcord -= 20
-#     # print(snake.position())
 
 screen.update() # used to update the all of the code above. 
 
 """#3 implement the movement of the snake within the window. """
-def move():
-    for i in range(len(entire_snake)-1, 0, -1):
-        new_xcord = entire_snake[i-1].xcor()
-        new_ycord = entire_snake[i-1].ycor()
-        entire_snake[i].goto(new_xcord,new_ycord)
-    entire_snake[0].forward(20)
-
 def up():
     if entire_snake[0].heading() != 270:
         entire_snake[0].setheading(90)
