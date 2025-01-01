@@ -51,11 +51,5 @@ class Snake:
         self.segments[0].forward(20)
 
 
-snake = Snake()
-snake.create_snake()
-
-for i in range(10):
-    snake.move()
-
 
 
