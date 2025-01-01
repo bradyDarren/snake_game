@@ -48,7 +48,7 @@ class Snake:
             new_xcor = self.segments[i- 1].xcor() 
             new_ycor = self.segments[i - 1].ycor() 
             self.segments[i].goto(x = new_xcor, y = new_ycor)
-        self.segments[0].forward(20)
+        self.segments[0].forward(100)
 
     def up(self):
         if self.segments[0].heading() != 270:
@@ -67,16 +67,18 @@ class Snake:
             self.segments[0].setheading(0)
     
     def wall_collision(self):
-        if self.segments[0].xcor() == 600 or self.segments[0].xcor() == -600:
-            xwall = Turtle() 
-            xwall.hideturtle()
-            xwall.penup()
-            xwall.color("white","white")
-            xwall.write("GAME OVER",move=False, align="center",font=("Ariel",40,"normal"))
-        elif self.segments[0].ycor() == 500 or self.segments[0].ycor() == -500:
-            ywall = Turtle()
-            ywall.hideturtle()
-            ywall.penup()
-            ywall.color("white","white")
-            ywall.write("GAME OVER",move=False, align="center",font=("Ariel",40,"normal"))
+        if self.segments[0].xcor() == 600 or self.segments[0].xcor() == -600 or self.segments[0].ycor() == 500 or self.segments[0].ycor() == -500:
+            for segment in self.segments:
+                segment.reset()
+            game_over = Turtle() 
+            game_over.hideturtle()
+            game_over.penup()
+            game_over.color("white","white")
+            game_over.write("GAME OVER",move=False, align="center",font=("Ariel",40,"normal"))
+            return True 
+        return False
+
+
+            
+        
 
