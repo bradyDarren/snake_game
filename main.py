@@ -36,7 +36,8 @@ while game_one:
     screen.update()
     time.sleep(.1)
     snake.move()
-    snake.wall_collision()    
+    if snake.wall_collision():
+        game_one = False  
 
 """#5 If the snake comes into contact with the food make the snake grow."""
 screen.exitonclick()
