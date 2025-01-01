@@ -23,30 +23,10 @@ snake.create_snake()
 screen.update() # used to update the all of the code above. 
 
 """#3 implement the movement of the snake within the window. """
-def up():
-    if entire_snake[0].heading() != 270:
-        entire_snake[0].setheading(90)
-        entire_snake[0].forward(20)
-
-def down():
-    if entire_snake[0].heading() != 90:
-        entire_snake[0].setheading(270)
-        entire_snake[0].forward(20)
-
-def left():
-    if entire_snake[0].heading() != 0:
-        entire_snake[0].setheading(180)
-        entire_snake[0].forward(20)
-
-def right():
-    if entire_snake[0].heading() != 180:
-        entire_snake[0].setheading(0)
-        entire_snake[0].forward(20)
-
-screen.onkey(key="Up", fun=up)
-screen.onkey(key="Down", fun=down)
-screen.onkey(key="Left", fun=left)
-screen.onkey(key="Right", fun=right)
+screen.onkey(key="Up", fun=snake.up)
+screen.onkey(key="Down", fun=snake.down)
+screen.onkey(key="Left", fun=snake.left)
+screen.onkey(key="Right", fun=snake.right)
 
 """#4 randomize a circle that shows up to resemble food."""
 
