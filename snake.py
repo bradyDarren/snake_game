@@ -23,23 +23,39 @@ class Snake:
         additional_segment.color("white")
         x_cor = self.segments[len(self.segments) - 1].xcor()
         y_cor = (self.segments[len(self.segments)-1].ycor())
-        if self.segments[0].heading() == 90 or self.segments[0] == 270:
-            y_cor = y_cor + 20
-            additional_segment.goto(x=x_cor, y=y_cor)
-            self.segments.append(additional_segment)
-        else: 
-            x_cor = x_cor + 20
-            additional_segment.goto(x=x_cor, y=y_cor)
-            self.segments.append(additional_segment)
+        snake_head = self.segments[0]
+        if snake_head.heading() == 0 or snake_head.heading() == 180:
+            if x_cor >= 0:
+                x_cor = x_cor + 20
+                additional_segment.goto(x=x_cor, y=y_cor)
+                self.segments.append(additional_segment)
+            else: 
+                x_cor = x_cor - 20
+                additional_segment.goto(x=x_cor, y=y_cor)
+                self.segments.append(additional_segment)
+        if snake_head.heading() == 90 or snake_head.heading() == 270:
+            if y_cor >= 0:
+                y_cor = y_cor + 20
+                additional_segment.goto(x=x_cor, y=y_cor)
+                self.segments.append(additional_segment)
+            else: 
+                y_cor = y_cor - 20
+                additional_segment.goto(x=x_cor, y=y_cor)
+                self.segments.append(additional_segment)
+
+    def move(self):
+        for i in range(len(self.segments)-1,0,-1):
+            new_xcor = self.segments[i- 1].xcor() 
+            new_ycor = self.segments[i - 1].ycor() 
+            self.segments[i].goto(x = new_xcor, y = new_ycor)
+        self.segments[0].forward(20)
 
 
-snake = Snake() 
+snake = Snake()
 snake.create_snake()
-snake.add_segment()
 
-
-    
-            
+for i in range(10):
+    snake.move()
 
 
 
