@@ -2,13 +2,14 @@ from turtle import Turtle, Screen
 from scoreboard import Scoreboard
 from snake import Snake
 import random 
+import time
 
 
 screen = Screen()
 screen.listen()
 """#1 create a black background for the screen as well as the score count indicator."""
 screen.bgcolor("black")
-screen.setup(height=1000, width=1250)
+screen.setup(height=1000, width=1200)
 screen.title("Classic Snake")
 screen.tracer(0)
 
@@ -29,15 +30,13 @@ screen.onkey(key="Left", fun=snake.left)
 screen.onkey(key="Right", fun=snake.right)
 
 """#4 randomize a circle that shows up to resemble food."""
+game_one = True
 
-def generate_food():
-    food_xcord = random.randint(-600,600)
-    food_ycord = random.randint(-475,475)
-    food = Turtle(shape="circle")
-    food.penup()
-    food.color("blue")
-    food.teleport(food_xcord,food_ycord) 
+while game_one: 
+    screen.update()
+    time.sleep(.1)
+    snake.move()
+    snake.wall_collision()    
 
 """#5 If the snake comes into contact with the food make the snake grow."""
-
 screen.exitonclick()
