@@ -9,11 +9,16 @@ class Snake:
     def create_snake(self):
         for segment in range(3):
             segment = Turtle(shape="square")
+            # lifts the pen to aviod drawing
             segment.penup()
+            # set the intital color of the snake body
             segment.color("white")
+            # sets the intital position of each section of the snake
             segment.goto(x=self.initial_xcord, y=self.initital_ycord)
-            # print(segment.position())            
+            # print(segment.position())           
+            # adds each instance/section of the snake to a list
             self.segments.append(segment)
+            # Adjust the x-cord of each segment
             if len(self.segments) != 3:
                 self.initial_xcord -= 20
 
