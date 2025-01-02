@@ -1,7 +1,6 @@
 from turtle import Turtle
 import random
 
-
 class Food(Turtle): 
     def __init__(self):
         super().__init__(shape="circle") 
@@ -20,6 +19,4 @@ class Food(Turtle):
         xcor = random.choice(self.food_xlocation)
         ycor = random.choice(self.food_ylocation)
         self.teleport(x=xcor,y=ycor)
-
-food = Food()
         
