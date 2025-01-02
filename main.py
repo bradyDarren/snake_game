@@ -29,6 +29,7 @@ screen.onkey(key="Right", fun=snake.right)
 """#4 randomize a circle that shows up to resemble food."""
 game_one = True
 food = Food()
+
 while game_one: 
     screen.update()
     time.sleep(.1)
@@ -40,5 +41,4 @@ while game_one:
         snake.grow()
         score.increase_score()
 
-"""#5 If the snake comes into contact with the food make the snake grow."""
 screen.exitonclick()
