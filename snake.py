@@ -48,7 +48,7 @@ class Snake:
             new_xcor = self.segments[i- 1].xcor() 
             new_ycor = self.segments[i - 1].ycor() 
             self.segments[i].goto(x = new_xcor, y = new_ycor)
-        self.segments[0].forward(100)
+        self.segments[0].forward(20)
 
     def up(self):
         if self.segments[0].heading() != 270:
