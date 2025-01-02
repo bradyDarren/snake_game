@@ -17,7 +17,7 @@ class Snake:
             if len(self.segments) != 3:
                 self.initial_xcord -= 20
 
-    def add_segment(self): 
+    def grow(self): 
         additional_segment = Turtle(shape="square")
         additional_segment.penup()
         additional_segment.color("white")
