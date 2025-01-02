@@ -15,7 +15,7 @@ class Snake:
             segment.color("white")
             # sets the intital position of each section of the snake
             segment.goto(x=self.initial_xcord, y=self.initital_ycord)
-            # print(segment.position())           
+            # print(segment.position())
             # adds each instance/section of the snake to a list
             self.segments.append(segment)
             # Adjust the x-cord of each segment
