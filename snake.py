@@ -67,7 +67,7 @@ class Snake:
             self.segments[0].setheading(0)
     
     def wall_collision(self):
-        if self.segments[0].xcor() == 600 or self.segments[0].xcor() == -600 or self.segments[0].ycor() == 500 or self.segments[0].ycor() == -500:
+        if self.segments[0].xcor() >= 600 or self.segments[0].xcor() <= -600 or self.segments[0].ycor() >= 500 or self.segments[0].ycor() <= -500:
             for segment in self.segments:
                 segment.reset()
             game_over = Turtle() 
