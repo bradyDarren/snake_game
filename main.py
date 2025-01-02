@@ -1,6 +1,7 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 from scoreboard import Scoreboard
 from snake import Snake
+from food import Food
 import time
 
 
@@ -27,13 +28,17 @@ screen.onkey(key="Right", fun=snake.right)
 
 """#4 randomize a circle that shows up to resemble food."""
 game_one = True
+food = Food()
 
 while game_one: 
     screen.update()
     time.sleep(.1)
     snake.move()
     if snake.wall_collision():
-        game_one = False  
+        game_one = False 
+    if snake.segments[0].distance(food) < 15:
+        food.generate_food()
+        snake.grow()
+        score.increase_score()
 
-"""#5 If the snake comes into contact with the food make the snake grow."""
 screen.exitonclick()
