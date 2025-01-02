@@ -32,7 +32,7 @@ food = Food()
 
 while game_one: 
     screen.update()
-    time.sleep(.1)
+    time.sleep(.05)
     snake.move()
     if snake.wall_collision():
         game_one = False 
