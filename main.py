@@ -20,9 +20,6 @@ score.update_score()
 """#2 create a snake with a square body"""
 snake = Snake()
 snake.create_snake()
-
-screen.update() # used to update the all of the code above. 
-
 """#3 implement the movement of the snake within the window. """
 screen.onkey(key="Up", fun=snake.up)
 screen.onkey(key="Down", fun=snake.down)
