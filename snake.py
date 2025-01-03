@@ -86,7 +86,7 @@ class Snake:
     def tail_collision(self):
         for section in self.segments[1::]:
             if self.segments[0].distance(section) < 15:
-                for segment in self.segments[1::]:
+                for segment in self.segments:
                     segment.reset()
                 game_over = Turtle() 
                 game_over.hideturtle()
