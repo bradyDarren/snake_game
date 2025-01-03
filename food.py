@@ -8,6 +8,7 @@ class Food(Turtle):
         self.color("blue", "blue")
         self.food_xlocation = []
         self.food_ylocation = []
+        self.shapesize(stretch_len=.75, stretch_wid=.75)
         self.generate_food()
 
     def generate_food(self):
