@@ -35,10 +35,13 @@ while game_one:
     time.sleep(.05)
     snake.move()
     if snake.wall_collision():
-        game_one = False 
+        game_one = False
+    if snake.tail_collision():
+        game_one = False
     if snake.segments[0].distance(food) < 15:
         food.generate_food()
         snake.grow()
         score.increase_score()
+    
 
 screen.exitonclick()
